@@ -1,5 +1,5 @@
-# Treeshole
+# Treehole
 
-This is the sample application for Treeshole
+This is the sample application for Treehole
 
 by Patrick
