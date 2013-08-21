@@ -7,6 +7,9 @@ gem 'devise'
 gem 'simple_form', '~> 3.0.0.rc'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use sqlite3 as the database for Active Record
 group :production do
