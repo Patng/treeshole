@@ -1,14 +1,7 @@
-
-<%= render 'pages/home' %>
-
 <div class="row">
 	<div class="span3">
-		<h3>Trend</h3>
-		<ul>
-			<% @tags.each do |tag| %>
-	  		<li><%= link_to tag.name, tag_path(:tag => tag.name) %></li>
-			<% end %>
-		</ul>
+		<%= render 'layouts/sidebar' %>
+
 	</div>
 	<div class="span6">
 		<%= render @pins %>

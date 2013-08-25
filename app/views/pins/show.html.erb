@@ -1,16 +1,26 @@
 <div class="row">
-	<div class="span6 offset3">
+
+	<div class="span7 offset1">
 		<div class="well">
+			<% if current_user == @pin.user %>
+				<%= link_to 'Edit', edit_pin_path(@pin) %> |
+			<% end %>
 			<%= link_to 'Back', pins_path %>
 			<%= image_tag @pin.image %>
 			<p>
 		 	 <%= @pin.description %>
 			</p>
-			<% if current_user == @pin.user %>
-				<%= link_to 'Edit', edit_pin_path(@pin) %> |
-			<% end %>
-			<%= content_tag(:div, nil, :class => 'fb-like', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '470' ) %>
-			<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '470' ) %>
+			<p>
+				<strong>
+				<% @pin.tags.any? %>
+	  			<% @pin.tags.each do |tag| %>
+	  				<%= link_to tag.name, tag_path(:tag => tag.name) %>
+				<% end %>
+				</strong> 
+			</p>
+				
+			<%= content_tag(:div, nil, :class => 'fb-like', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
+			<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
 
 		</div>
 	</div>

@@ -7,10 +7,21 @@ class PinsController < ApplicationController
   def index
     @tags = Pin.tag_counts_on(:tags).order("count desc").limit(10)
     if params[:tag]
-      @pins = Pin.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20)
+      @pins = Pin.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(10)
     else
-      @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+      @pins = Pin.order("created_at desc").page(params[:page]).per_page(10)
     end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pins }
+      format.js
+    end
+  end
+
+  def search
+    @pins = Pin.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(10)
+    render action: 'show'
   end
 
   # GET /pins/1
