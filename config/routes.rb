@@ -10,6 +10,7 @@ Treeshole::Application.routes.draw do
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
   get 'about' => 'pages#about'
+  get 'channel' => 'pages#channel'
 
   root 'pins#index'
   
