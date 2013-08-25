@@ -10,6 +10,8 @@ gem 'aws-sdk'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'acts-as-taggable-on'
+gem "koala", "~> 1.7.0rc1"
 
 # Use sqlite3 as the database for Active Record
 group :production do

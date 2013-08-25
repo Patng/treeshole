@@ -1,10 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
 $baseFontFamily: Oxygen;
+
 body {
 	padding-top: 60px;
+}
+
+.navbar-inner {
+	@include box-shadow(none !important);
+	border: 0;
+}
+
+.container {
+	max-width: 900px;
 }
 
 .footer {
@@ -15,22 +29,11 @@ body {
 	}
 }
 
+/* Pins Index */
+
 /* Required for jQuery Masonry */
 
-.box {
-	margin: 5px;
-	padding: 5px;
-	font-size: 11px;
-	line-height: 1.4em;
-	float: left;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	box-shadow: 1px 1px 10px #444;
-	width: 214px;
-}
-
-.box img {
+img {
 	display: block;
 	width: 100%;
 	-webkit-border-radius: 5px;
@@ -38,6 +41,7 @@ body {
 	border-radius: 5px;
 }
 
-.description {
-	margin: 10px 0 5px;
+ul {
+	list-style-type: none;
+	font-size: 18px;
 }

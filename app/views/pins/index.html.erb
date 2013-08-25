@@ -1,7 +1,19 @@
+
 <%= render 'pages/home' %>
 
-<div id="pins">
-  <%= render @pins %>
+<div class="row">
+	<div class="span3">
+		<h3>Trend</h3>
+		<ul>
+			<% @tags.each do |tag| %>
+	  		<li><%= link_to tag.name, tag_path(:tag => tag.name) %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="span6">
+		<%= render @pins %>
+		<%= will_paginate @pins %>
+	</div>
+
 </div>
 
-<%= will_paginate @pins %>

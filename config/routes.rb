@@ -1,6 +1,11 @@
 Treeshole::Application.routes.draw do
+  resources :topics
+
   get "users/show"
   resources :pins
+
+  # Routes for tags
+  get 'tags/:tag', to: 'pins#index', as: :tag
 
   devise_for :users
   get 'users/:id' => 'users#show', as: :user

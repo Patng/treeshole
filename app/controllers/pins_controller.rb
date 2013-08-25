@@ -1,11 +1,16 @@
 class PinsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+    @tags = Pin.tag_counts_on(:tags).order("count desc").limit(10)
+    if params[:tag]
+      @pins = Pin.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20)
+    else
+      @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+    end
   end
 
   # GET /pins/1
@@ -71,6 +76,7 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :tag_list, :name)
     end
+
 end

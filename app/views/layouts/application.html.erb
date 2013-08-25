@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Treehole</title>
+	  <title>9cap</title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-
-		<%= render 'layouts/header' %>
+		<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=330603236992239";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
 		<div class="container">
-			<% flash.each do |name, msg| %>
-				<%= content_tag(:div,msg, class: "alert alert-#{name}") %>
-			<% end %>
-			<%= yield %>
-			
+			<%= render 'layouts/header' %>
+			<div class="container">
+				<% flash.each do |name, msg| %>
+					<%= content_tag(:div,msg, class: "alert alert-#{name}") %>
+				<% end %>
+				<%= yield %>
+				
+			</div>
+			<div class="container">
+			<%= render 'layouts/footer' %>
+			</div>
 		</div>
-		<div class="container">
-		<%= render 'layouts/footer' %>
-		</div>
-		
 	</body>
 </html>
