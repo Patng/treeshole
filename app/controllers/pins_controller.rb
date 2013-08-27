@@ -27,7 +27,7 @@ class PinsController < ApplicationController
   def votefor
     @pin = Pin.find(params[:id])
     @pin.liked_by current_user
-    redirect_to :back
+    redirect_to @pin
   end
 
   # GET /pins/1

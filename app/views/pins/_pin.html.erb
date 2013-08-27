@@ -1,22 +1,25 @@
-		<%= link_to (image_tag pin.image(:medium)), pin %>	
-	<p class="description">
-		<%= pin.description %>
-	</p>
-	<p>
+<p class="description">
+	<%= pin.description %>
+</p>
+<p>
+	<strong>
+		<% pin.tags.any? %>
+  		<% pin.tags.each do |tag| %>
+  			<%= link_to tag.name, tag_path(:tag => tag.name) %>
+		<% end %>
+	</strong> 
+</p>
+
+<%= link_to (image_tag pin.image(:medium)), pin %>	
+<div>	
+		<%= link_to '<i class="icon-thumbs-up"></i> Like'.html_safe, votefor_pin_path(pin), :method => :post %>
+		<%= pin.upvotes.size %>
+	<div class="user">
+		
 		<strong>
-			<% pin.tags.any? %>
-  			<% pin.tags.each do |tag| %>
-  				<%= link_to tag.name, tag_path(:tag => tag.name) %>
-			<% end %>
+			Posted by <%= link_to pin.user.name, pin.user %>
 		</strong> 
-	</p>
-	<p>
-		<strong>
-		Posted by <%= link_to pin.user.name, pin.user %>
-		</strong> 
-	</p>
-	<p><%= link_to '<i class="icon-thumbs-up"></i> Like'.html_safe, votefor_pin_path(pin), :method => :post %>
-	</p>
-	<%= pin.upvotes.size %>
-	<hr>
+	</div>
+</div>
+<hr>
 

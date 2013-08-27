@@ -20,10 +20,20 @@
 				<% end %>
 				</strong> 
 			</p>
+			<div>	
+				<%= link_to '<i class="icon-thumbs-up"></i> Like'.html_safe, votefor_pin_path(@pin), :method => :post %>
+				<%= @pin.upvotes.size %>
+				<div class="user">
+		
+					<strong>
+						Posted by <%= link_to @pin.user.name, @pin.user %>
+					</strong> 
+				</div>
+			</div>
 
 
-	<%= content_tag(:div, nil, :class => 'fb-like', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
-	<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
+			<%= content_tag(:div, nil, :class => 'fb-like', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
+			<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '600' ) %>
 		</div>
 	</div>
 </div>
