@@ -27,14 +27,13 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
-    addressable (2.3.5)
+    acts_as_votable (0.7.1)
     arel (4.0.0)
     atomic (1.1.12)
     aws-sdk (1.15.0)
       json (~> 1.4)
       nokogiri (< 1.6.0)
       uuidtools (~> 2.1)
-    bcrypt-ruby (3.1.1)
     bcrypt-ruby (3.1.1-x86-mingw32)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
@@ -62,8 +61,6 @@ GEM
       multi_json (~> 1.0)
     faker (1.2.0)
       i18n (~> 0.5)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.0)
@@ -73,18 +70,12 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.0)
-    koala (1.7.0rc1)
-      addressable
-      faraday
-      multi_json
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.9)
-    multipart-post (1.2.0)
-    nokogiri (1.5.10)
     nokogiri (1.5.10-x86-mingw32)
     orm_adapter (0.4.0)
     paperclip (3.5.1)
@@ -133,7 +124,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
     thor (0.18.1)
     thread_safe (0.1.2)
@@ -158,6 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_votable (~> 0.7.1)
   aws-sdk
   bootstrap-sass (~> 2.3.2.1)
   bootstrap-will_paginate
@@ -166,7 +157,6 @@ DEPENDENCIES
   faker
   jbuilder (~> 1.2)
   jquery-rails
-  koala (~> 1.7.0rc1)
   paperclip (~> 3.0)
   pg
   rails (= 4.0.0.rc2)

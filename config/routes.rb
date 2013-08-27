@@ -2,7 +2,15 @@ Treeshole::Application.routes.draw do
   resources :topics
 
   get "users/show"
+
   resources :pins
+
+  resources :pins do
+    member do
+      post :votefor
+    end
+  end
+
 
   # Routes for tags
   get 'tags/:tag', to: 'pins#index', as: :tag

@@ -24,6 +24,12 @@ class PinsController < ApplicationController
     render action: 'show'
   end
 
+  def votefor
+    @pin = Pin.find(params[:id])
+    @pin.liked_by current_user
+    redirect_to :back
+  end
+
   # GET /pins/1
   # GET /pins/1.json
   def show

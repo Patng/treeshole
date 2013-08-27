@@ -17,6 +17,7 @@
       <div class="nav-collapse collapse">
       	<ul class="nav pull-right">
          <li><%= form_tag pins_path, :id =>'search', :method => 'get' do %>
+          <i class="icon-search"></i>
           <%= text_field_tag :tag, 'Search' %>  
         <% end %></li>
           <% if user_signed_in? %>

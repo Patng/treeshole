@@ -2,6 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+jQuery ->
+  if $('.pagination').length
+    $(window).scroll ->
+      url = $('.pagination .next_page a').attr('href')
+      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
+        $('.pagination').text("Loading...")
+        $.getScript(url)
+    $(window).scroll()
+
 fb_root = null
 fb_events_bound = false
 
@@ -39,14 +48,3 @@ initializeFacebookSDK = ->
     cookie    : true
     xfbml     : true
 
-jQuery ->
-    $('#pins').imagesLoaded ->
-        $('#pins').masonry itemSelector: ".box"
-
-  if $('.pagination').length
-    $(window).scroll ->
-      url = $('.pagination .next_page a').attr('href')
-      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-        $('.pagination').text("Fetching more pins...")
-        $.getScript(url)
-    $(window).scroll()

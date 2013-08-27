@@ -11,5 +11,7 @@ class Pin < ActiveRecord::Base
 						size: { less_than: 5.megabytes }
 
 	acts_as_taggable
+
+	acts_as_votable
 		
 end

@@ -11,7 +11,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'acts-as-taggable-on'
-gem "koala", "~> 1.7.0rc1"
+gem 'acts_as_votable', '~> 0.7.1'
 
 # Use sqlite3 as the database for Active Record
 group :production do

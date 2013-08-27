@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   :rememberable, :trackable, :validatable
 
   has_many :pins
+
+  acts_as_voter
 end
