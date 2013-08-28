@@ -1,4 +1,5 @@
 Treeshole::Application.routes.draw do
+  devise_for :admins
   resources :topics
 
   get "users/show"
