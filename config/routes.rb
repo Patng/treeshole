@@ -20,6 +20,7 @@ Treeshole::Application.routes.draw do
   get 'users/:id' => 'users#show', as: :user
   get 'about' => 'pages#about'
   get 'channel' => 'pages#channel'
+  get '/googlef1431ac24026689e.html' => 'pages#googlef1431ac24026689e'
 
   root 'pins#index'
   

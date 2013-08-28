@@ -4,4 +4,8 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def googlef1431ac24026689e
+  end
+
 end
