@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def googlef1431ac24026689e
+  	render :layout => false
   end
 
 end
