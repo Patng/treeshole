@@ -18,6 +18,7 @@ Treeshole::Application.routes.draw do
 
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
+  get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
   get 'channel' => 'pages#channel'
   get '/googlef1431ac24026689e.html' => 'pages#googlef1431ac24026689e'

@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def terms
+  end
+
   def googlef1431ac24026689e
   	render :layout => false
   end
