@@ -21,6 +21,7 @@ Treeshole::Application.routes.draw do
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'
   get 'channel' => 'pages#channel'
+  get '/sitemap.xml.gz' => 'pages#sitemap'
   get '/googlef1431ac24026689e.html' => 'pages#googlef1431ac24026689e'
 
   root 'pins#index'

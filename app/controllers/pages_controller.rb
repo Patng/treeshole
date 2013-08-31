@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def terms
   end
 
+  def sitemap
+  	render :layout =>false
+  end  
+
   def googlef1431ac24026689e
   	render :layout => false
   end
