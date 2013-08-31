@@ -3,7 +3,6 @@ require 'sitemap_generator'
 
 SitemapGenerator::Sitemap.default_host = 'http://www.9-cap.com'
 SitemapGenerator::Sitemap.create do
-  add '/home', :changefreq => 'daily', :priority => 0.9
   add '/about', :changefreq => 'weekly'
   add '/terms', :changefreq => 'weekly'
 end
