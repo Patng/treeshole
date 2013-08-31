@@ -12,6 +12,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'acts-as-taggable-on'
 gem 'acts_as_votable', '~> 0.7.1'
+gem 'sitemap_generator'
 
 # Use sqlite3 as the database for Active Record
 group :production do

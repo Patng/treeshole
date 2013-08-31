@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-$navbarBackgroundHighlight: white;
-$navbarBackground: white;
+$navbarBackgroundHighlight: black;
+$navbarBackground: black;
 
 @import 'bootstrap';
 @import 'bootstrap-responsive';
@@ -14,16 +14,37 @@ body {
 
 #logo {
 	width: 100px;
+	-webkit-filter: invert(100%);  
 }
 
 .navbar-inner {
 	@include box-shadow(none !important);
 	border: 0;
+	
+}
+
+.navbar .nav > li > a {
+    color:  white;
+    font-size: 12px;
 }
 
 .sidebar-nav-fixed {
     position:fixed;
+    width:21.97%;
 
+}
+
+@media (max-width: 767px) {
+  .sidebar-nav-fixed{
+    width:auto;
+  }
+}
+
+@media (max-width: 979px) {
+  .sidebar-nav-fixed {
+    position: static;
+    width: auto;
+  }
 }
 
 #search {
