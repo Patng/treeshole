@@ -28,6 +28,11 @@ body {
     font-size: 12px;
 }
 
+.navbar .nav > li > a:hover {
+    color:  grey;
+    font-size: 12px;
+}
+
 .sidebar-nav-fixed {
     position:fixed;
     width:21.97%;
