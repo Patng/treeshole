@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sitemap_generator'
 
-SitemapGenerator::Sitemap.default_host = 'http://heroku.com'
+SitemapGenerator::Sitemap.default_host = 'http://www.9-cap.com'
 SitemapGenerator::Sitemap.create do
   add '/home', :changefreq => 'daily', :priority => 0.9
   add '/about', :changefreq => 'weekly'
